@@ -8,7 +8,7 @@ console.log("<----- Quiz starts! Good luck ----->")
 
 function quiz(question, answer){
   const userAnswer = readlineSync.question(question)
-  if(userAnswer.toUpperCase() === answer.trim().toUpperCase()){
+  if(userAnswer.toUpperCase() === answer.toUpperCase()){
     console.log("You are right!")
     score = score + 1
   }else{
