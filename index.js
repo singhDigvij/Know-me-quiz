@@ -1,54 +1,76 @@
-import readlineSync from "readline-sync"
-const userName = readlineSync.question("What is your name ? ")
-console.log(`Welcome ${userName.toUpperCase()} Do you know Digvijay ? Lets check out`)
 
+
+import readlineSync from "readline-sync"
 let score = 0
 
-console.log("<----- Quiz starts! Good luck ----->")
+const userName = readlineSync.question("what is your name ?")
 
-function quiz(question, answer) {
+console.log("😃 Welcome", userName.toUpperCase(), " to Do You Know Me Quiz 😀")
+
+function play(question, answer) {
   const userAnswer = readlineSync.question(question)
   if (userAnswer.toUpperCase() === answer.toUpperCase()) {
-    console.log("You are right!")
+    console.log("You are Right✅",)
     score = score + 1
   } else {
-    console.log("You are wrong!")
+    console.log("You are Wrong❌",)
     score = score - 1
   }
-  console.log("-----")
+  console.log("Your current score is:", score)
+  console.log("----------")
 }
 
-
-
-
-const quizQuestions = [
+const questions = [
   {
-    question: "Q1. Which state does he live ?",
-    answer: "uttar pradesh"
-  },
-  {
-    question: "Q2. Which city does he live ?",
-    answer: "prayagraj"
-
-  },
-  {
-    question: "Q3. Does he has a laptop ?",
-    answer: "yes"
-  },
-  {
-    question: "Q4. Does he has a wireless mouse ?",
-    answer: "yes"
+    question: "In which month my birthday comes ?",
+    answer: "august"
+  }, {
+    question: "My favourite bike ?",
+    answer: "r15"
+  }, {
+    question: "I have laptop of which company ?",
+    answer: "asus"
+  }, {
+    question: "I like F1 or Football ?",
+    answer: "f1"
+  }, {
+    question: "Which company's smartphone i have ?",
+    answer: "samsung"
   }
 ]
 
-for (let i = 0; i < quizQuestions.length; i++) {
-  quiz(quizQuestions[i].question, quizQuestions[i].answer)
+for (let i = 0; i < questions.length; i++) {
+  play(questions[i].question,
+    questions[i].answer)
 }
 
 
-console.log("<----- Quiz ends ----->")
+console.log("*****Quiz ends here***** ")
 
-console.log(userName.toUpperCase(), "your final score is", score)
+
+
+
+console.log("Your Final Score is:", score)
+
+
+console.log("High scorers👇")
+
+const highScorers = [
+  {
+    name: "Aman",
+    score: 5
+  },
+  {
+    name: "Janvi",
+    score: 4
+  }
+]
+
+for (let i = 0; i < highScorers.length; i++) {
+  console.log(highScorers[i].name),
+    console.log("score:", highScorers[i].score),
+    console.log("<-->")
+}
 
 
 
