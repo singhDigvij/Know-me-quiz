@@ -57,7 +57,7 @@ console.log("High scorers👇")
 
 const highScorers = [
   {
-    name: "Aman",
+    name: "Aahan",
     score: 5
   },
   {
